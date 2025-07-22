@@ -1,0 +1,183 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 30px 20px 20px 20px;
+    box-sizing: border-box;
+}
+.note-form {
+    padding: 10px 0 18px 0;
+}
+input, textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 1em;
+    background: #fafafa;
+    transition: border 0.2s, background 0.2s;
+    box-sizing: border-box;
+}
+input:focus, textarea:focus {
+    border-color: #007bff;
+    background: #fff;
+    outline: none;
+}
+button, .btn-cancel, .btn-edit, .btn-delete {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #007bff 60%, #0056b3 100%);
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 10px 0;
+    width: auto;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    outline: none;
+    letter-spacing: 0.02em;
+}
+button:hover, button:focus, .btn-cancel:hover, .btn-edit:hover, .btn-delete:hover {
+    background: linear-gradient(90deg, #0056b3 60%, #007bff 100%);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+    transform: translateY(-2px) scale(1.03);
+}
+.btn-cancel {
+    background: linear-gradient(90deg, #888 60%, #444 100%);
+    color: #fff;
+}
+.btn-edit {
+    background: linear-gradient(90deg, #28a745 60%, #218838 100%);
+    color: #fff;
+    margin-right: 8px;
+}
+.btn-delete {
+    background: linear-gradient(90deg, #dc3545 60%, #b21f2d 100%);
+    color: #fff;
+}
+.btn-edit:hover, .btn-edit:focus {
+    background: linear-gradient(90deg, #218838 60%, #28a745 100%);
+}
+.btn-delete:hover, .btn-delete:focus {
+    background: linear-gradient(90deg, #b21f2d 60%, #dc3545 100%);
+}
+
+#toggle-theme {
+    float: right;
+    margin-top: -55px;
+    margin-bottom: 10px;
+    background: #23272f;
+    color: #f1f1f1;
+    font-size: 1em;
+}
+#toggle-theme:hover, #toggle-theme:focus {
+    background: #0056b3;
+    color: #fff;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    background-color: #eee;
+    margin: 10px 0;
+    padding: 22px 18px 16px 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    position: relative;
+    transition: box-shadow 0.2s, background 0.2s;
+}
+li:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+    background: #f5f7fa;
+}
+
+li h3 {
+    margin: 0 0 7px 0;
+    font-size: 1.2em;
+}
+li small {
+    color: #888;
+}
+li a {
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.dark-mode {
+    background-color: #121212 !important;
+    color: #f1f1f1 !important;
+}
+.dark-mode .container {
+    background: #181a1b;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+.dark-mode input, .dark-mode textarea {
+    background: #23272f;
+    color: #f1f1f1;
+    border: 1px solid #444;
+}
+.dark-mode input:focus, .dark-mode textarea:focus {
+    background: #23272f;
+    border-color: #007bff;
+}
+.dark-mode button, .dark-mode .btn-cancel, .dark-mode .btn-edit, .dark-mode .btn-delete {
+    background: linear-gradient(90deg, #23272f 60%, #23272f 100%);
+    color: #f1f1f1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.dark-mode button:hover, .dark-mode button:focus,
+.dark-mode .btn-cancel:hover, .dark-mode .btn-edit:hover, .dark-mode .btn-delete:hover {
+    background: linear-gradient(90deg, #0056b3 60%, #23272f 100%);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+}
+.dark-mode .btn-cancel {
+    background: linear-gradient(90deg, #888 60%, #23272f 100%);
+    color: #fff;
+}
+.dark-mode .btn-edit {
+    background: linear-gradient(90deg, #28a745 60%, #23272f 100%);
+    color: #fff;
+}
+.dark-mode .btn-delete {
+    background: linear-gradient(90deg, #dc3545 60%, #23272f 100%);
+    color: #fff;
+}
+.dark-mode .btn-edit:hover, .dark-mode .btn-edit:focus {
+    background: linear-gradient(90deg, #218838 60%, #28a745 100%);
+}
+.dark-mode .btn-delete:hover, .dark-mode .btn-delete:focus {
+    background: linear-gradient(90deg, #b21f2d 60%, #dc3545 100%);
+}
+
+.dark-mode li {
+    background-color: #23272f;
+    color: #f1f1f1;
+}
+.dark-mode li small {
+    color: #aaa;
+}
+.dark-mode li a {
+    color: #4da3ff;
+}
+

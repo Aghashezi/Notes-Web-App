@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="/add" method="POST" class="note-form">
+    <input type="text" name="title" placeholder="Note title" required>
+    <textarea name="content" placeholder="Note content" required></textarea>
+    <button type="submit">Add Note</button>
+</form>
+
+<input type="text" id="searchInput" placeholder="Search notes..." onkeyup="filterNotes()" value="{{ query }}">
+
+<ul id="notesList">
+    {% for note in notes %}
+    <li>
+        <h3>{{ note[1] }}</h3>
+        <p>{{ note[2] }}</p>
+        <small>{{ note[3] }}</small><br>
+        <a href="/edit/{{ note[0] }}" class="btn-edit">Edit</a>
+        <a href="/delete/{{ note[0] }}" class="btn-delete" onclick="return confirm('Delete this note?');">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<script>
+function filterNotes() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const notes = document.querySelectorAll('#notesList li');
+    notes.forEach(note => {
+        const text = note.textContent.toLowerCase();
+        note.style.display = text.includes(input) ? '' : 'none';
+    });
+}
+</script>
+{% endblock %}
